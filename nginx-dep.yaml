@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx
+  namespace: app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx
+      ver: "1.0"
+  template:
+    metadata:
+      labels: 
+        app: nginx
+        ver: "1.0"
+    spec:
+      nodeName: node
+      hostname: master
+      imagePullSecrets:
+      - name: nexus-docker
+      containers:
+      - name: api-gateway
+        image: monisha96/sample-pipeline-nodejs:1.0.BUILD_NUMBER
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
