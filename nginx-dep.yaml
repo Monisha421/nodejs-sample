@@ -16,7 +16,7 @@ spec:
         ver: "1.0"
     spec:
       nodeName: node
-      hostname: master
+      hostname: node
       imagePullSecrets:
       - name: nexus-docker
       containers:
