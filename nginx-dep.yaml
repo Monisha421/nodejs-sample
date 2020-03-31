@@ -21,7 +21,7 @@ spec:
       - name: nexus-docker
       containers:
       - name: nginx
-        image: monisha96/sample-pipeline-nodejs:1.0.BUILD_NUMBER
+        image: monisha96/test-practice:1.0.BUILD_NUMBER
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8080
